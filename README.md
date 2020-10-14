@@ -17,6 +17,8 @@ Describe research topic
 
 We will be using [R Markdown](https://rmarkdown.rstudio.com/) to write the actual reports as pdf documents. You should read in full the instructions for using R Markdown on the Canvas page. R Markdown will allow you to create professional quality reports with your tables and figures fully integrated. In this project, you will find a `full_report.Rmd` R Markdown file that you will use to produce your report. All assignments should be completed by knitting this report to PDF and submitting the PDF on Canvas. 
 
+You can learn more about the dataset that you will be using by going to the README in the input directory, where you will also find the actual RData file itself. 
+
 Please keep the following guidelines in mind for all project reports:
 
 - Use clear, concise and accessible language throughout the report. Your target reader is not me, but rather a smart group of people who have little experience in interpreting statistics. Your job is to explain your results to them.
