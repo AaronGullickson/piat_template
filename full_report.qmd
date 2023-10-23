@@ -1,15 +1,21 @@
 ---
 title: "Full Report on [Name Research Project]"
 author: "Your name here"
-output: pdf_document
+format: pdf
+editor: visual
+execute:
+  echo: false
+  message: false
+  warning: false
 ---
 
-```{r setup, include=FALSE}
+```{r}
+#| label: setup
+#| include: false
+
 ## This code block will load the data and packages that you will need
 ## for the project. Click the green "play" button in the upper right to run this
 ## code.
-knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, 
-                      error = FALSE, fig.align = "center", fig.height = 4)
 #load("input/data.RData")
 library(ggplot2)
 library(texreg)
@@ -23,7 +29,10 @@ State the research question and why it is important to study in your own words.
 
 Describe the dataset being used in your own words. Describe the key variables and how they were measured. Show the distributions of these key variables graphically and describe these distributions. You can copy and past the code chunk below to produce figures.
 
-```{r fig.cap="A Caption"}
+```{r}
+#| label: fig-a-unique-name
+#| fig-cap: Put a caption here
+
 #code (e.g. plot, hist, barplot, boxplot) to produce the figure
 ```
 
@@ -32,20 +41,30 @@ Describe the dataset being used in your own words. Describe the key variables an
 Describe the bivariate association between your key variables, using graphs and statistics.
 
 ```{r fig.cap="A Caption"}
+#| label: fig-put-another-unique-name
+#| fig-cap: Put a caption here
+
 #code (e.g. plot, hist, barplot, boxplot) to produce the figure
 ```
 
-Describe the results of the full multivariate regression models. You can use the code chunk template below to place the regression results into a nice format using the texreg package. This code chunk is initially set to not run when this document is knitted. Change `eval=FALSE` to `eval=TRUE` to allow it to run. 
+Describe the results of the full multivariate regression models. You can use the code chunk template below to place the regression results into a nice format using the texreg package. This code chunk is initially set to not run when this document is rendered. Change `eval: false` to `eval: true` to allow it to run.
 
-```{r, results='asis', eval=FALSE}
-#make some models. You may need more or less than four. 
+```{r}
+#| label: reg-results
+#| results: asis
+#| eval: false
+
+# IMPORTANT: change eval to true above when you are ready to run
+# this line of code
+
+# make some models. You may need more or less than four. 
 model1 <- lm()
 model2 <- lm()
 model3 <- lm()
 model4 <- lm()
 
-#change from screenreg to texreg for knitting
-knitreg(list(model1, model2, model3, model4),
+# change from screenreg to texreg for rendering
+screenreg(list(model1, model2, model3, model4),
         caption="A caption",
         caption.above = TRUE,
         #Comment out custom.coef.names until your models are ready for knitting
@@ -62,7 +81,7 @@ knitreg(list(model1, model2, model3, model4),
         custom.note = "%stars. Standard errors in parenthesis.")
 ```
 
-A discussion of the results of your table should go here, **not** in conclusions. 
+A discussion of the results of your table should go here, **not** in conclusions.
 
 ## Conclusions
 
